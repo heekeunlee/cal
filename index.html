@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Scientific Calculator</title>
+    <meta name="description" content="A professional, premium scientific calculator with glassmorphism design.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="calculator-card glass">
+            <header class="calc-header">
+                <h1>Scientifix</h1>
+                <div class="mode-badge">Advanced Mode</div>
+            </header>
+
+            <div class="display-container">
+                <div id="history" class="history"></div>
+                <div id="current-operand" class="display">0</div>
+            </div>
+
+            <div class="keypad">
+                <!-- Row 1: Memory & Specials -->
+                <button class="key func" onclick="appendOperator('**')">xʸ</button>
+                <button class="key func" onclick="appendFunction('Math.sqrt')">√</button>
+                <button class="key func" onclick="appendFunction('Math.sin')">sin</button>
+                <button class="key func" onclick="appendFunction('Math.cos')">cos</button>
+                <button class="key func" onclick="appendFunction('Math.tan')">tan</button>
+
+                <!-- Row 2: More Functions -->
+                <button class="key func" onclick="appendConstant('Math.PI')">π</button>
+                <button class="key func" onclick="appendConstant('Math.E')">e</button>
+                <button class="key func" onclick="appendFunction('Math.log10')">log</button>
+                <button class="key func" onclick="appendFunction('Math.log')">ln</button>
+                <button class="key func" onclick="appendOperator('!')">x!</button>
+
+                <!-- Row 3: Standard Numbers & Ops -->
+                <button class="key action clear" onclick="clearDisplay()">AC</button>
+                <button class="key action" onclick="deleteLast()">DEL</button>
+                <button class="key operator" onclick="appendOperator('/')">÷</button>
+                <button class="key operator" onclick="appendOperator('*')">×</button>
+
+                <button class="key number" onclick="appendNumber('7')">7</button>
+                <button class="key number" onclick="appendNumber('8')">8</button>
+                <button class="key number" onclick="appendNumber('9')">9</button>
+                <button class="key operator" onclick="appendOperator('-')">-</button>
+
+                <button class="key number" onclick="appendNumber('4')">4</button>
+                <button class="key number" onclick="appendNumber('5')">5</button>
+                <button class="key number" onclick="appendNumber('6')">6</button>
+                <button class="key operator" onclick="appendOperator('+')">+</button>
+
+                <button class="key number" onclick="appendNumber('1')">1</button>
+                <button class="key number" onclick="appendNumber('2')">2</button>
+                <button class="key number" onclick="appendNumber('3')">3</button>
+                <button class="key operator" onclick="appendOperator('(')">(</button>
+
+                <button class="key number" onclick="appendNumber('0')">0</button>
+                <button class="key number" onclick="appendNumber('.')">.</button>
+                <button class="key equal" onclick="compute()">=</button>
+                <button class="key operator" onclick="appendOperator(')')">)</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Scientifix. Deployed via Automator.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
